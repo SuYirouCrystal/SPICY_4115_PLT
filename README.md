@@ -82,11 +82,6 @@ A basic test suite is included in the tests/ directory (if present). To run test
 make # Test file alreading present
 ```
 
-Or manually invoke:
-```sh
-./spicyc tests/sample1.spicy
-```
-
 ## Contributing
 Contributions and bug reports are welcome! Please open an issue or submit a pull request with:
 1. A clear description of the feature or bug
