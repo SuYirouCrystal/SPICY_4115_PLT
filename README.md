@@ -78,7 +78,7 @@ You can also pass `-help` to see all available options:
 ## Testing
 A basic test suite is included in the tests/ directory (if present). To run tests:
 ```sh
-make test
+make # Test file alreading present
 ```
 
 Or manually invoke:
