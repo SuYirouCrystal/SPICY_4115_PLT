@@ -57,25 +57,6 @@ You can also pass `-help` to see all available options:
 ./spicyc -help
 ```
 
-## Project Structure
-```plaintext
-.
-├── Makefile
-├── Makefile_mac
-├── Makefile_win_mingw64
-├── codegen.ml        # Code generation to target IR
-├── lexer.ml          # Lexer definitions
-├── main.ml           # Driver: CLI parsing & pipeline orchestration
-├── parser.mly        # Menhir grammar
-├── parser.ml         # Generated parser
-├── parser.mli        # Parser interface
-├── sast.ml           # AST definitions
-├── semant.ml         # Semantic analysis (type checking)
-├── spicyc            # Build-wrapper script
-├── test2.spicy       # Sample source program
-└── test.exe          # Windows test binary
-```
-
 ## Testing
 A basic test suite is included in the tests/ directory (if present). To run tests:
 ```sh
