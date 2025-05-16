@@ -17,6 +17,7 @@ A minimal compiler for the SPICY programming language, implemented in OCaml.
 - [Menhir](https://github.com/ocaml/menhir)
 - `ocamllex` (bundled with OCaml)
 - GNU Make (or compatible)
+> **Windows users:** Install the full LLVM toolchain (e.g., from `clang+llvm-<version>-x86_64-pc-windows-msvc.tar.xz`) so that `clang`, `llc`, `lli`, and other LLVM utilities are available on `PATH`.
 
 You can install the OCaml toolchain via OPAM:
 
