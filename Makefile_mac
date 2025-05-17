@@ -8,7 +8,7 @@ SRC        := test2.spicy
 IR         := program.ll
 BIN        := $(basename $(SRC))
 
-.PHONY: all spicyc ir compile run clean
+.PHONY: all spicyc ir compile run test clean
 
 # Default: compile then run
 all: compile run
@@ -29,6 +29,9 @@ compile: ir
 # 4) Run the compiled program
 run: compile
 	./$(BIN)
+
+test: spicyc
+	bash tests/run_tests.sh
 
 # Clean all build artifacts
 clean:

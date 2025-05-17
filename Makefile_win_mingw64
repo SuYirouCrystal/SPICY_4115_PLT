@@ -10,7 +10,7 @@ SRC         = test2.spicy
 IR          = program.ll
 BIN         = test2
 
-.PHONY: all spicyc ir run clean
+.PHONY: all spicyc ir run test clean
 
 # Default: build compiler, emit IR, then run
 all: run
@@ -60,6 +60,9 @@ run: ir
 	$(LLC) -filetype=obj $(IR) -o program.o
 	$(CC) program.o -o $(BIN).exe
 	./$(BIN).exe
+
+test:
+	bash tests/run_tests.sh
 
 # Clean up artifacts
 clean:
