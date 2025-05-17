@@ -58,10 +58,67 @@ You can also pass `-help` to see all available options:
 ```
 
 ## Testing
-A basic test suite is included in the tests/ directory (if present). To run tests:
-```sh
-make # Test file alreading present
-```
+- **Representative Positive Examples:**
+  1. **Arithmetic**
+     - **Source:** 
+        ```spicy
+        let a = 5
+        let b = a + 2 * 3
+        print b
+        ```
+  2. **Conditional**
+     - **Source:**
+       ```spicy
+       if true {
+         print "true"
+       } else {
+         print "false"
+       }
+       ```
+  3. **For Loop**
+     - **Source:**
+       ```spicy
+       fun add(x, y) {
+         x + y
+       }
+
+       let a = 3
+       let b = 4
+       print add(a, b)
+
+       if true {
+         print "This is true"
+       } elseif false {
+         print "This won't run"
+       } else {
+         print "Fallback"
+       }
+
+       for i in 0..2 {
+         print i
+       }
+
+       ```
+
+- **Representative Negative Example:**
+  - **Source:** 
+    ```spicy
+    let x = 1 + "94"
+    print x
+    ```  
+  - **Expected:** the compiler should report a syntax error and exit non-zero.
+
+- **Running the Test Suite:**
+  1. Add your positive (`A.spicy`, `B.spicy`, `C.spicy`) and negative (`D.spicy`) test cases in `tests/`, along with their golden IR files (`A.ll`, `B.ll`, `C.ll`).
+  2. Ensure `tests/run_tests.sh` is executable and contains the harness logic.
+  3. Simply run:
+     ```sh
+     make test
+     ```
+     This will rebuild the compiler if needed and execute both positive and negative tests automatically.
+
+- **Automation:**
+  - **Unit Tests:** Shell harness (`tests/run_tests.sh`) normalizes and diffs IR, checks errors for negative case.
 
 ## Contributing
 Contributions and bug reports are welcome! Please open an issue or submit a pull request with:
